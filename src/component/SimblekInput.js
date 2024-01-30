@@ -1,4 +1,4 @@
-import { Search } from "./icons/Icons"
+import { Search } from "../assests/icons/Icons"
 
 function SimblekInput({buttonColor,useLegacy}){
     return(

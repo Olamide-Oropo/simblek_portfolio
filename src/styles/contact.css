@@ -1,0 +1,84 @@
+.contactme-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem !important;
+    flex-wrap: wrap;
+}
+.contactme{
+    width: 40%;
+    min-width: 300px;
+}
+.contact-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: var(--subborderradius);
+    max-width: 400px;
+    height: 450px;
+    background-image: linear-gradient(#00000018, #00000072),url(../assests/images/5172658.jpg);
+    background-size: cover;
+}
+.contact-info-container h2{
+    font-size: var(--subheadingfontsize);
+    color:var(--subcolor)
+}
+.contact-info{
+    display: grid;
+    gap:40px
+}
+.contact-info span{
+    display: flex;
+    gap:15px;
+    align-items: center;
+}
+.contact-info span>p{
+    color: var(--lightgrey);
+    text-align: center;
+}
+.contact-info-links{
+    display: flex;
+    align-items: center;
+    gap:15px
+}
+.contact-info-links>svg{
+    transition: .3s ease;
+}
+.contact-info-links>svg:hover{
+    fill: var(--maincolor);
+    transform: scale(1.3);
+}
+.contantmeform{
+    display: grid;
+    gap: 10px;
+}
+.nameinputs{
+    display: flex;
+    align-items: center;
+    gap:35px;
+}
+.nameinputs section{
+    display: grid;
+    gap:10px
+}
+.errormsg{
+    font-size: var(--highlightfontsize);
+    color: rgb(239, 97, 97);
+}
+[role~="alert"] {
+    background-color: #1fda4eb5;
+    border-radius: var(--subborderradius);
+    color: var(--subcolor);
+    padding: .5rem 1rem;
+    text-align: center;
+}
+[role~="alert"] p{
+    font-size: var(--highlightfontsize);
+}
+@media screen and (max-width:800px) {
+    .contactme-container {
+        justify-content: center;
+        gap: 4rem
+    }
+}

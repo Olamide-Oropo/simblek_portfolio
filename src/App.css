@@ -7,561 +7,285 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-}
 :root{
-    --simcolor:#045bbf;
-    --simwhite:#dae5dbe3;
-    --simnavfontfam:'Trebuchet MS',
-        'Lucida Sans Unicode',
-        'Lucida Grande',
-        'Lucida Sans',
-        Arial,
-        sans-serif;
-    --simfontsize:1.5rem;
+    --maincolor:#045bbf;
+    --subcolor:#ffffff;
+    --secondcolor:rgb(238, 255, 20);
+    --fadedmaincolor:#045bbf58;
+    --titlefontsize:35pt;
+    --subheadingfontsize:25pt;
+    --leadfontsize: 14pt;
+    --highlightfontsize:12pt;
+    --titlefontweight:600;
+    --leadfontweight:500;
+    --mainborderradius:14pt;
+    --subborderradius:10pt;
+    --inputborderradius:7pt;
+    --boxshadowcolor: rgb(200, 200, 200);
+    --lightgrey:rgb(220, 219, 219);
+    --darkgrey:#494949;
+    --highlighttextcolor:rgba(126, 126, 126, 0.873);
 }
-.navContainer{
-    padding: 0.7rem 2rem;
-    background-color: var(--simcolor);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex:1 0 auto;
-    flex-flow: row nowrap;
-    width:100%
+p{
+    margin: 0;
 }
-.modalContainer{
-    display:flex;
-    flex-direction: column;
-    margin-top: 1rem;
-    animation: fadein 300ms ease-in;
-    animation-fill-mode: forwards;
+a{
+    text-decoration: none;
+    color:inherit;
+    cursor: pointer;
 }
-.simblekBtn {
-    display: flex;
-    padding: 0.575rem 0.875rem;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border: none;
-    border-top-right-radius: 30%;
-    border-bottom-right-radius: 30%;
+figure{
+    margin: 0;
 }
-.formContainer{
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0rem;
+button{
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    text-transform: uppercase;
 }
-.footerTitle{
-    font-size: var(--simfontsize);
-    color:#353536c3;
-    text-align: center;
+button:active{
+    transform: scale(1.2);
 }
-.footerTitleLine{
-    width: 90%;
-    height: 2px;
-    background-color: #353536c3;
-    margin: .7rem 0rem;
-    display: block;
+.pill,.activepill{
+    border-radius: var(--mainborderradius);
+    transition: .3s ease;
 }
-.linkIcons{
-    display: flex;
-    justify-content: space-around;
-    margin-top: .8rem;
+.pill:hover{
+    color: var(--lightgrey) !important;
+    font-size: 18pt;
 }
-.searchForm {
-    display: flex;
-    flex-direction: row;
-    flex: 0.5 0 auto;
-}
-.searchInput {
-    display: flex;
-    padding: 0.575rem 0.875rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    flex:.8 0 auto;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-.searchInput:focus {
-    border: 2px solid var(--simcolor);
-    outline: none
-}
-.design{
-    height:3rem;
-    width:3rem;
+.logo {
+    height: 2.5em;
+    width: 2.5rem;
     border-radius: 50%;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-50px);
-    animation: bounce 1s ease;
-    animation-fill-mode: forwards;
-}
-.designS {
-    color: var(--simcolor);
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: var(--simnavfontfam);
-    opacity:0;
-    animation:fadein 1s ease-in;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-}
-.brandName,.brandModalName{
-    font-weight: 500;
-    color: rgb(238, 218, 4);
-    font-size: var(--simfontsize);
-}
-
-.brandS,.brandModalS{
-    color: white;
-    font-size: calc(var(--simfontsize) + 0.5rem)
-}
-.d-none{
-    animation: fade 3s ease-in; 
-    animation-fill-mode: forwards;
-}
-.listIcon-open{
-    transform: rotate(90deg);
-}
-@keyframes fade {
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-        height:0;
-        width:0
-    }   
-}
-.simbelklistItem,.simbleksublistItem{
-    display:flex;
-    list-style: none;
-    font-size: 1.3rem;
-    padding: 0px 2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border: .4rem solid var(--maincolor);
     cursor: pointer;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: .7rem;
-}
-.simbleksublistItem{
-    padding-left: 3rem;
-    font-size: 1.1rem;
-}
-.sublistContainer{
-    height:auto
-}
-.scrollDown{
-    opacity:0;
-    animation: showlist 500ms ease-in-out;
-    animation-fill-mode: forwards;
-}
-.listContainer{
-    display: flex;
-    flex-direction: column;
-    margin: 0 1rem;
-}
-.listIcon{
-    align-items: center;
-    display: flex;
-    font-size: 1rem;
-}
-.simbelklistitemContainer{
-    display: flex;
-}
-.d-none{
-    display:none;
-}
-.mainHeaderlg{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex:1 0 auto;
-    padding: 1.5rem;
-    justify-content: space-between;  
-}
-.headerContainer{
-   background-color: var(--simcolor); 
-}
-.line{
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.601);
-    margin: 0rem 3rem;
-}
-.headerBodyLg{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 1rem;
-    justify-content: left;
-    flex: 1 0 5%;
-}
-.headerImgLg{
-    background-image: url("./assests/images/road-5089188.jpg");
-    border-radius: .4rem;
-    height: 300px;
-    width:100%;
-    background-size: cover;
-}
-.headingLg,.subheadingLg,.contentLg{
-    color:white;
-    text-align: left;
-}
-.headerImgLgContainer{
-    display: flex;
-    flex:1 0 auto;
-    padding:1rem
-}
-.headingLg{
-    font-size: 3rem;
-    font-weight: 600;
-}
-.subheadingLg{
-    font-size: 2rem;
-    font-weight: 400;
-    padding: .4rem 0;
-}
-.contentLg{
-    font-size: 1.3rem;
-    font-weight: 400;
-    padding: .4rem 0;
-    margin-bottom: 2.5rem;
-}
-.mainHeaderSm{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),url("./assests/images/road-5089188.jpg");
-    background-size: cover;
-    padding: 2rem;
-}
-.headingSm,
-.subheadingSm,
-.contentSm {
-    color: white;
-    text-align: center;
-}
-.headingSm {
-    font-size: 2.5rem;
-    font-weight: 500;
 }
 
-.subheadingSm {
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding: .4rem 0;
+.logo>div {
+    color: var(--maincolor);
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
-.contentSm {
-    font-size: 1.3rem;
-    font-weight: 400;
-    padding: .4rem 0;
-    margin-bottom: 1rem;
+.logo>p {
+    font-size: var(--leadfontsize);
+    font-weight: var(--leadfontweight);
+    color: var(--maincolor);
+    letter-spacing: 15px;
 }
-.headerBodySm{
-    margin-top: 5rem;
-}
-.mainSection1{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex:1 0 auto;
-    flex-direction: row;
-    margin-top: 1rem;
-}
-.tyreTypesContainer{
-    display: flex;
-    justify-content: end;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-.tyreTypesCar,.tyreTypesTruck{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),url("./assests/images/tyre-1714669_1920.jpg");
-    height:30vh;
-    padding:3rem 1.2rem;
-    background-size: cover;
-    display:flex;
-    flex-direction: column;
-    color:white;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 500;
-    transition: font-size 200ms ease-in;
-    border-radius: .4rem;
-    flex:1 0 auto
-}
-.tyreTypesCar{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/porsche-gd1d817290_1920.jpg");
-    margin-right: 2rem;
-    padding: 3rem 1.4rem;
-}
-.tyreTypesCar:hover{
-    font-size: 2rem;
-}
-.tyreTypesTruck{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/truck-g14a6be5a7_1920.jpg");
-}
-.tyreTypesTruck:hover{
-    font-size: 2rem;
-}
-.thickLine{
-    margin-top: 1rem;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 3rem;
-    transition: width 200ms ease-in;
-}
-.thickLine:hover{
-    width: 10rem
-}
-.mainBanner{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/tyre-1714669_1920.jpg");
-    height: 35vh;
-    padding: 1.4rem;
-    background-size: cover;
+.activepill{
+    color: var(--maincolor);
     display: flex;
     flex-direction: column;
-    color: white;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 500;
-    border-radius: .7rem;
-    text-align: center;
-    justify-content: flex-end;
-    flex:.4 0 auto;
-    margin-bottom: 2rem;
+    position: relative;
 }
-.newsMainContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.newsContainer {
-    display: flex;
-    flex-direction: row;
-    border-top: 1.5px solid rgba(0, 0, 0, 0.673);
-    width:80%;
-    padding:1rem 2rem;
-}
-.newsDemark{
-    display: flex;
-    width: 5px;
-    background-color: var(--simcolor);
-    padding: 4px 0rem
-}
-.newsContainer:last-child{
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.673);
-    margin-bottom: 1rem;
-}
-.newsHeaderText{
-    font-size: var(--simfontsize);
-    text-align: left;
-}
-.newsBody{
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: .4rem;
-}
-.tyreTypesTruckLg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/truck-g14a6be5a7_1920.jpg");
-}
-
-.tyreTypesTruckLg:hover {
-    font-size: 1.8rem;
-}
-@keyframes bounce{
-    from{
-        transform: translateY(-50px);
-    }
-    30%{
-        transform: translateY(10px);
-    }
-    55%{
-        transform: translateY(-15px);
-    }
-    65%{
-        transform: translateY(10px);
-    }
-    90%{
-        transform: translateY(-5px);
-    }
-    to{
-        transform: translateY(0px);
-    }
-
-}
-@keyframes fadein{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-@keyframes showlist{
-    from{
-        opacity:0
-    }
-    to{
-        opacity: 0.94;
-    }
-}
-.simblekCard {
-    background-color: #045bbf !important;
-    color: white !important;
-    display: flex;
-    flex-direction: column;
-    width:75%;
-    margin: auto;
-    margin-bottom: 2rem;
-}
-.simblekCardText{
-    text-align: center;
-    width:80%;
-    margin:auto
-}
-.card-body {
-    flex: .6 0 auto;
-    padding: .7rem .7rem;
-    justify-content: center;
-}
-.simblekcardTitle {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.OurservicesContainer{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.titleContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-.titleText{
-    color:black;
-    font-size: var(--simfontsize);
-    font-family: var(--simfontsize);
-    letter-spacing: 2px;
-}
-.titleUnderline{
+.activepill:after{
+    content:"";
+    width: 100%;
     height: 3px;
-    background-color: #212529;
-    width: 10rem;
-    margin-top: .3rem;
+    border-radius: var(--subborderradius);
+    background-color: var(--maincolor);
+    position: absolute;
+    bottom: -13px;
 }
-.footerMain{
-    background-color: var(--simcolor);
-    padding: 2rem;
-    margin-top:3rem
+.mainsimblekbtn {
+    padding: 0.5rem 0;
+    color: var(--subcolor);
+    background-color: var(--maincolor);
+    border: none;
+    border-radius: var(--subborderradius);
+    font-weight: var(--leadfontweight);
+    text-transform: none !important;
+    width: 100%;
 }
-.footerLine{
-    border-top: 2px solid white;
-    margin: 1rem 0rem;
+.mainsimblekbtn:disabled{
+    color: var(--darkgrey);
+    background-color: var(--lightgrey);
 }
-.footerHeader,.footerBottom{
-    color:white;
+.subsimblekbtn{
+    padding: .375rem 1rem;
+    color:black;
+    background-color: var(--secondcolor);
+    border-radius: var(--mainborderradius);
+    border: 3px solid black;
+    font-weight: 700;
+    width: max-content;
+}
+.Container{
+    padding: 0 5%;
+    margin: 5rem 0;
+}
+.center{
+    display: flex;
+    justify-content: center !important;
+}
+.start{
+    display: flex;
+    justify-content: flex-start !important;
+}
+.column{
+    flex-direction: column;
+    align-items: center;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 30px;
+    justify-content: space-between;
+}
+.titletext,.subheadingtext{
+    width: 100%;
+    font-size: var(--subheadingfontsize);
+    font-weight: var(--titlefontweight);
+    color: rgba(0, 0, 0, 0.855);
+    text-align: start;
+    margin:2rem 0 !important;
+    display: flex;
+    flex-direction: column;
+}
+.titletext::after,.subheadingtext::after{
+    content:"";
+    width: 70px;
+    height: 8px;
+    border-radius: var(--subborderradius);
+    background-color: var(--secondcolor);
+    margin-top: .7rem;
+}
+.subheadingtext{
+    font-size: calc(var(--subheadingfontsize) - 5pt);
+}
+.textcenter{
+    text-align: center !important;
+    align-items: center;
+}
+.leadtext{
+    font-size: var(--leadfontsize);
+    font-weight: var(--leadfontweight);
+    margin:0;
+}
+.highlighttext{
+    font-size: var(--highlightfontsize);
+    color: var(--highlighttextcolor);
+    line-height: 1.5rem;
+}
+.articletext{
+    line-height: 2rem;
+    color:#706f6f;
+    margin: 1rem 0;
+}
+.services-article{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 280px;
+    gap:10px
+}
+.services-article>svg{
+    margin-bottom: .6rem;
+}
+.promotional-banner{
+    width: 100%;
+    background-color: var(--maincolor);
+    color:var(--subcolor);
+    padding: 2rem 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 2rem 0;
+}
+.promotional-banner>strong{
+    font-size: 25pt;
+    font-weight: var(--titlefontweight);
+}
+.about-simblek{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+.aboutinfo p{
+    max-width: 300px;
+    margin: 1.5rem 0;
+    line-height: 2rem;
+}
+.aboutinfo h2{
+    color: var(--maincolor);
+    font-size: var(--titlefontsize);
+    margin: 0;
+}
+.about-simblek img{
+    width: 500px;
+    border-radius: var(--subborderradius);
+    border: 5px solid var(--fadedmaincolor);
+}
+.service-man img{
+    max-width: 500px;
+    width: 100%;
+}
+.logo{
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+    transition: .3s ease;;
+}
+.logo:hover{
+    animation: spin .5s linear infinite !important;
+    animation-play-state: running !important;
+}
+.simblek-input{
+    border: 1px solid var(--lightgrey);
+    box-shadow: 0px 0px 2px var(--lightgrey);
+    border-radius: var(--inputborderradius);
+    width: 100%;
+    max-width: 450px;
+    padding: .5rem .75rem;
+    margin-bottom: .75rem;
+    transition: .2s linear;
+}
+.simblek-input:focus{
+    outline: none;
+    border: 3px solid var(--fadedmaincolor);
+}
+.simblek-input::placeholder{
+    color:rgb(155, 155, 155)
+}
+.notfound{
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+    gap:30px
+}
+.notfound h1{
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     text-align: center;
 }
-.mainSection1Lg{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    flex: 1 0 auto;
-    flex-direction: row;
-    margin: 3rem 0rem;
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 
 }
-.tyreTypesContainerLg{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-}
-.mainBannerLg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/porsche-gd1d817290_1920.jpg");
-    height: 40vh;
-    padding: 1.4rem;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    font-weight: 500;
-    border-radius: .7rem;
-    text-align: center;
-    justify-content: flex-end;
-    flex: .7 0 auto;
-    margin-right: .5rem;
-}
-.tyreTypesCarLg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/porsche-gd1d817290_1920.jpg");
-    margin-right: 2rem;
-    padding: 3rem .2rem;
-}
-.tyreTypesCarLg,.tyreTypesTruckLg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/tyre-1714669_1920.jpg");
-    height: 40vh;
-    padding: 3rem 1.2rem;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: font-size 200ms ease-in;
-    border-radius: .4rem;
-    flex: 1 0 auto
-}
-.tyreTypesCarLg:hover{
-    font-size: 1.8rem;
-}
-.tyreTypesTruckLg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("./assests/images/truck-g14a6be5a7_1920.jpg");
-}
-@media screen and (max-width:500px){
-    .navContainer{
-        padding: .7rem 1rem;
+@media screen and (max-width:600px) {
+    .about-simblek img{
+        max-width: 300px;
     }
-    .tyreTypesCar {
-        margin-right: 1.2rem;
+    .Container{
+        padding: 0 1rem;
     }
 }
-@media screen and (max-width:360px) {
-    .tyreTypesCar,.tyreTypesTruck{
-        width:55%;
-        margin: 1rem 0rem
-    }
-    .tyreTypesContainer{
-        padding:0rem 2rem
-    }
-    
-}
-@media screen and (max-width:385px) {
-    .newsContainer {
-            border-top: 1.5px solid rgba(0, 0, 0, 0.673);
-            width: 85%;
-            padding: 1rem 1rem;
-        }
-}
-@media screen and (min-width:900px){
-    .linkIcons{
-        padding: 0rem 15vw;
+@media screen and (max-width:400px) {
+    .titletext{
+        font-size: calc(var(--subheadingfontsize) - 5pt);
     }
 }

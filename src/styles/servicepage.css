@@ -1,0 +1,42 @@
+.services-toc-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.services-toc{
+    width: 50%;
+    min-width: 300px;
+}
+.toc{
+    width: max-content;
+    margin: 1.5rem 0;
+    position: sticky;
+    top:75px;
+    height: max-content;
+}
+.toc ul{
+    padding: 0;
+    list-style: decimal;
+    padding-left:2rem;
+    margin:1rem 0
+}
+.toc ul li{
+    text-transform: capitalize;
+    color: var(--maincolor);
+    cursor: pointer;
+    margin: .4rem 0;
+}
+.toc ul li::marker{
+    color:black
+}
+@media screen and (max-width:600px) {
+    .services-toc-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .toc{
+        position: relative;
+        top:0;
+    }
+}

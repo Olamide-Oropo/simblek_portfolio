@@ -1,0 +1,28 @@
+.tyre-range-article{
+    min-width: 300px;
+    width: 30%;
+    border-radius: var(--subborderradius);
+    border: 1px solid var(--fadedmaincolor);
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    height: 430px;
+    box-shadow: 0px 0px 10px var(--boxshadowcolor);
+}
+.tyre-range-article img{
+    border-radius: var(--subborderradius) var(--subborderradius) 0 40px;
+    object-fit: cover;
+    margin-bottom: .6rem;
+    border-bottom: 5px solid var(--fadedmaincolor);
+    height: 200px;
+}
+.tyre-range-article>a,.tyre-range-article>p,.tyre-range-article>h5{
+    padding-left: .6rem !important;
+}
+.tyre-range-article>a{
+    font-weight: var(--leadfontweight);
+    color: var(--maincolor) !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

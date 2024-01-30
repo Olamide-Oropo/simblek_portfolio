@@ -1,36 +1,26 @@
-import './App.css';
 import React from 'react';
-import Nav from './component/Nav';
-import Modal from "./component/Modal"
-import Tyres from "./assests/Tyres.json";
-import Main from './component/Main';
-import Footer from './component/Footer';
-import { TyreContext } from './assests/TyreProvider';
-import { GlobalContext } from './assests/GlobalState';
+import Home from "./routes/Home";
+import Contactus from "./routes/Contactus";
+import Products from './routes/Products';
+import Aboutus from "./routes/Aboutus";
+import Services from "./routes/Services";
+import NotFound from './routes/NotFound';
+import { Route,Routes,BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+
 
 function App() {
-  const [state,setState] = React.useState(JSON.parse(JSON.stringify(Tyres)))
-  const [isOpen,setIsOpen] = React.useState(false)
-  const [screenSize,setScreenSize] = React.useState(window.innerWidth)
-  React.useEffect(() => {
-      const Handelresize = () => {setScreenSize(window.innerWidth)}
-      window.addEventListener("resize",Handelresize)
-  },[])
-  JSON.parse(JSON.stringify(Tyres))
   return (
-    <GlobalContext.Provider value={[isOpen,setIsOpen]}>
-    <TyreContext.Provider value={[state,setState]}>
-      <div className="App">
-        <Nav />
-        {isOpen?<Modal />:(
-        <>
-          <Main screenSize={screenSize}/>
-          <Footer />
-        </>)}
-      </div>
-    </TyreContext.Provider>
-    </GlobalContext.Provider>
-    
+    <Router>
+      <Routes>
+        <Route path='/simblek_project_porfolio' element={<Home />}/>
+        <Route path='/simblek_project_porfolio/contact' element={<Contactus />}/>
+        <Route path='/simblek_project_porfolio/products' element={<Products />}/>
+        <Route path='/simblek_project_porfolio/about' element={<Aboutus />}/>
+        <Route path='/simblek_project_porfolio/services' element={<Services />}/>
+        <Route path='/*' element={<NotFound />}/>
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,0 +1,46 @@
+.calltoaction{
+    background-image: linear-gradient(rgb(19, 19, 9, .3), rgb(19, 19, 19, .6)), url("../assests/images/porsche-gd1d817290_1920.jpg");
+    background-position: left;
+    height: 500px;
+    margin-bottom: 5rem;
+}
+.calltoaction article{
+    display: flex;
+    height: 100%;
+    margin: 0 10%;
+    flex-direction: column;
+    justify-content: center;
+}
+.calltoaction article h2{
+    font-size: var(--titlefontsize);
+    font-weight: var(--titlefontweight);
+    color: var(--secondcolor);
+    margin: .3rem 0;
+}
+.calltoaction article h6{
+    font-size: var(--leadfontsize);
+    font-weight: var(--leadfontweight);
+    color: var(--subcolor);
+    margin-bottom: 1rem;
+}
+.calltoaction article p{
+    font-size: var(--highlightfontsize);
+    color: var(--lightgrey);
+    max-width: 350px;
+    margin-bottom: 1.5rem;
+    line-height: 1.5rem;
+}
+@media screen and (max-width:750px){
+    .calltoaction{
+        background-position: top center;
+        height: 80vh;
+    }
+    .calltoaction article{
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .calltoaction article p{
+        padding: 0 1rem;
+    }
+}

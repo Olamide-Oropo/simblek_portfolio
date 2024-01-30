@@ -1,0 +1,120 @@
+.products-cto{
+    background-image: linear-gradient(rgb(19, 19, 9, .5), rgb(19, 19, 19, .8)), url("../assests/images/map-2530069_1280.jpg") !important;
+    height: 350px !important;
+}
+.products-cto article p{
+    font-size: 13pt !important;
+    margin-top: 1rem;
+}
+.products-cto article .products-input{
+    align-self: center;
+    position: relative;
+    bottom: -15%;
+}
+[role ~= "tabpanel"]{
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    margin-bottom: 4rem;
+    align-items: center;
+    gap:1rem;
+    border:2px solid var(--maincolor);
+    border-radius: var(--subborderradius);
+    padding: .5rem 0
+}
+[role ~= "tab"]{
+    width: fit-content;
+    padding: .2rem .7rem;
+    flex: none;
+    color:var(--darkgrey);
+    text-align: center;
+    transition: .25s ease-in;
+    cursor: pointer;
+}
+.productstab{
+    color: #1b1a1a;
+    font-size: 13.5pt;
+    font-weight: 600;
+}
+.tabcontainer{
+    display: grid;
+    place-items: center;
+}
+.activeproductstab {
+    background-color: var(--maincolor);
+    color: white;
+    border-radius: var(--mainborderradius);
+    font-size: 16pt;
+    font-weight:600
+}
+.product-details{
+    width: 300px;
+    border-radius: var(--mainborderradius);
+    box-shadow: 0px 0px 20px var(--lightgrey);
+    padding: 1rem;
+    display: grid;
+}
+.product-details img{
+    width: 60%;
+    place-self: center;
+}
+.product-details-content{
+    display: grid;
+    gap: 15px;
+}
+.price{
+    place-self: end;
+    background-color: var(--maincolor);
+    color:white;
+    padding: .4rem;
+    font-weight: var(--leadfontweight);
+    border-radius: var(--subborderradius);
+}
+.product-details-content section{
+    padding: 1rem;
+    border-radius: var(--subborderradius);
+    box-shadow: 0px 0px 15px var(--boxshadowcolor);
+}
+.product-details-content .highlighttext{
+    color:var(--darkgrey) !important;
+}
+.products-input{
+    background-color: var(--subcolor);
+    border: 1px solid var(--lightgrey);
+    box-shadow: 0px 0px 2px var(--lightgrey);
+    border-radius: var(--inputborderradius);
+    width: 100%;
+    max-width: 450px;
+    padding: .5rem .75rem;
+    margin-bottom: .75rem;
+    transition: .2s linear;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    align-items: center;
+}
+.products-input input{
+    border: none;
+    width: 90%;
+    height: fit-content;
+}
+.products-input input:focus{
+    outline: none;
+}
+.products-input input:focus + svg{
+    fill: var(--maincolor);
+}
+@media screen and (max-width:750px) {
+    .products-cto {
+        background-position: center !important;
+        height: 70vh !important;
+        padding: 0 10%;
+    }
+}
+@media screen and (max-width:500px){
+    [role ~= "tabpanel"]{
+        display: flex;
+        width: 100%;
+        gap:0
+    }
+}
